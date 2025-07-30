@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+
+  /* Trading-specific color palette */
+  --dark-100: hsl(0, 0%, 97%);
+  --dark-200: hsl(0, 0%, 42%);
+  --dark-300: hsl(0, 0%, 29%);
+  --dark-400: hsl(0, 0%, 20%);
+  --dark-500: hsl(0, 0%, 18%);
+  --dark-600: hsl(0, 0%, 12%);
+  --dark-700: hsl(0, 0%, 7%);
+  --bullish: hsl(158, 64%, 52%);
+  --bearish: hsl(6, 78%, 57%);
+  --warning: hsl(45, 93%, 47%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+}
+
+@layer utilities {
+  .bg-dark-100 { background-color: var(--dark-100); }
+  .bg-dark-200 { background-color: var(--dark-200); }
+  .bg-dark-300 { background-color: var(--dark-300); }
+  .bg-dark-400 { background-color: var(--dark-400); }
+  .bg-dark-500 { background-color: var(--dark-500); }
+  .bg-dark-600 { background-color: var(--dark-600); }
+  .bg-dark-700 { background-color: var(--dark-700); }
+  
+  .text-dark-100 { color: var(--dark-100); }
+  .text-dark-200 { color: var(--dark-200); }
+  .text-dark-300 { color: var(--dark-300); }
+  .text-dark-400 { color: var(--dark-400); }
+  .text-dark-500 { color: var(--dark-500); }
+  .text-dark-600 { color: var(--dark-600); }
+  .text-dark-700 { color: var(--dark-700); }
+  
+  .border-dark-100 { border-color: var(--dark-100); }
+  .border-dark-200 { border-color: var(--dark-200); }
+  .border-dark-300 { border-color: var(--dark-300); }
+  .border-dark-400 { border-color: var(--dark-400); }
+  .border-dark-500 { border-color: var(--dark-500); }
+  .border-dark-600 { border-color: var(--dark-600); }
+  .border-dark-700 { border-color: var(--dark-700); }
+  
+  .bg-bullish { background-color: var(--bullish); }
+  .text-bullish { color: var(--bullish); }
+  .border-bullish { border-color: var(--bullish); }
+  
+  .bg-bearish { background-color: var(--bearish); }
+  .text-bearish { color: var(--bearish); }
+  .border-bearish { border-color: var(--bearish); }
+  
+  .bg-warning { background-color: var(--warning); }
+  .text-warning { color: var(--warning); }
+  .border-warning { border-color: var(--warning); }
+  
+  .bg-bullish\/10 { background-color: hsl(158, 64%, 52%, 0.1); }
+  .bg-bearish\/10 { background-color: hsl(6, 78%, 57%, 0.1); }
+  .bg-warning\/10 { background-color: hsl(45, 93%, 47%, 0.1); }
+  
+  .bg-bullish\/20 { background-color: hsl(158, 64%, 52%, 0.2); }
+  .bg-bearish\/20 { background-color: hsl(6, 78%, 57%, 0.2); }
+  .bg-warning\/20 { background-color: hsl(45, 93%, 47%, 0.2); }
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-600);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dark-400);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-300);
+}
+
+/* Animation utilities */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Chart-specific styles */
+.chart-container {
+  background: var(--dark-700);
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.strategy-overlay {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.price-level {
+  position: absolute;
+  right: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  backdrop-filter: blur(4px);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .mobile-tab-content {
+    padding: 1rem;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+  }
+  
+  .mobile-price-widget {
+    margin-bottom: 0.75rem;
+  }
+  
+  .mobile-strategy-card {
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .mobile-header {
+    padding: 0.75rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  
+  .mobile-tabs {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+  }
+  
+  /* Touch-friendly buttons */
+  .mobile-button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improved scrolling on mobile */
+  .mobile-scroll {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  
+  /* Better tap targets */
+  .mobile-touch-target {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+  }
+}
